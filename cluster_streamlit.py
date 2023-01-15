@@ -37,6 +37,9 @@ def cluster_explain(df, feat_options, cluster_num):
 
     for i in range(len(cluster_type)):
         st.write(feat_options[i], ": ", cluster_type[i])
+    
+    center_point = (df.loc[df['cluster'] == cluster_num, "latitude"].mean(), df.loc[df['cluster'] == cluster_num, "longitude"].mean())
+    st.write("The center point of the cluster is at: ", center_point)
 
 
 
